@@ -62,6 +62,14 @@
                 <li><strong>Firebase Analytics:</strong> Understanding how the App is used (if enabled)</li>
                 <li><strong>Error Logging:</strong> Collecting crash reports and error information to improve the App</li>
             </ul>
+            <p>Content filtering is performed by Google Gemini AI's built-in safety filters, which we configure to block inappropriate content. Content is filtered across four specific harm categories:</p>
+            <ul>
+                <li><strong>Harassment:</strong> Content that harasses, intimidates, or threatens others</li>
+                <li><strong>Hate Speech:</strong> Content that promotes hatred, discrimination, or violence against individuals or groups</li>
+                <li><strong>Sexually Explicit Content:</strong> Content that is sexually explicit or pornographic</li>
+                <li><strong>Dangerous Content:</strong> Content that promotes violence, self-harm, or illegal activities</li>
+            </ul>
+            <p>Google Gemini AI's safety filters are configured to block content with LOW, MEDIUM, or HIGH probability of harm in these categories. Content that violates these policies will be rejected, and you will receive an error message indicating that the content violates our content policy.</p>
             
             <h2>4. Third-Party Services</h2>
             
@@ -137,6 +145,8 @@
             <p>We implement appropriate technical and organizational measures to protect your information:</p>
             <ul>
                 <li>Input sanitization to prevent security vulnerabilities</li>
+                <li>Content filtering and validation to block inappropriate or harmful content</li>
+                <li>Prompt injection detection to prevent AI system manipulation</li>
                 <li>Rate limiting to prevent abuse</li>
                 <li>Secure API communication using HTTPS</li>
                 <li>Secure storage of API keys and sensitive credentials</li>

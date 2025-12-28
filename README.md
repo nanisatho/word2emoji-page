@@ -60,10 +60,45 @@ If you prefer manual deployment or need to use a different branch:
 3. Configure the source branch and folder
 4. GitHub will automatically build and deploy your site
 
+### Custom Domain Configuration
+
+The site is configured with a custom domain:
+
+- **Custom Domain**: `word2emoji.fiorellamille.com`
+- **Live URL**: `http://word2emoji.fiorellamille.com/`
+- **Source Branch**: `main` branch
+- **Last Deployed**: Automatically deployed by GitHub Pages build and deployment workflow
+
+#### Current Status
+
+⚠️ **DNS Configuration Issue**: The custom domain is currently improperly configured.
+
+- DNS check is unsuccessful - domain's DNS record could not be retrieved (InvalidDNSError)
+- HTTPS enforcement is unavailable until DNS is properly configured
+- The site is accessible via HTTP, but HTTPS cannot be enforced until DNS records are correctly set up
+
+#### DNS Configuration Requirements
+
+To properly configure the custom domain and enable HTTPS:
+
+1. Add DNS records for `word2emoji.fiorellamille.com` pointing to GitHub Pages
+2. Wait for DNS propagation
+3. Once DNS check passes, HTTPS will become available
+4. Enable "Enforce HTTPS" in GitHub Pages settings for secure connections
+
+For more information, see GitHub's [documentation on configuring custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
 ## URLs
 
 Once deployed, your pages will be available at:
 
+**Custom Domain (HTTP - DNS needs configuration)**:
+- Home: `http://word2emoji.fiorellamille.com/`
+- Privacy Policy: `http://word2emoji.fiorellamille.com/privacy-policy.html`
+- Terms of Service: `http://word2emoji.fiorellamille.com/terms-of-service.html`
+- Support: `http://word2emoji.fiorellamille.com/support.html`
+
+**GitHub Pages Default Domain**:
 - Home: `https://nanisatho.github.io/word2emoji-page/`
 - Privacy Policy: `https://nanisatho.github.io/word2emoji-page/privacy-policy.html`
 - Terms of Service: `https://nanisatho.github.io/word2emoji-page/terms-of-service.html`
