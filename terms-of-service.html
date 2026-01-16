@@ -25,10 +25,11 @@
             
             <p>Word2Emoji is a mobile application that:</p>
             <ul>
-                <li>Converts text input into emoji representations</li>
-                <li>Uses artificial intelligence (specifically Google Gemini AI) to generate emoji suggestions</li>
-                <li>Stores your conversion history locally on your device</li>
-                <li>Provides multiple emoji options for each text input</li>
+                <li>Converts text input into emoji representations (up to 1,000 characters per input)</li>
+                <li>Uses artificial intelligence (specifically Google Gemini AI gemini-2.0-flash-lite model) to generate emoji suggestions</li>
+                <li>Provides up to 5 emoji options for each text input (configurable from 1 to 5)</li>
+                <li>Stores your conversion history locally on your device (limited to the 100 most recent conversions)</li>
+                <li>Supports multiple languages: English, Spanish, French, German, Italian, Japanese, Korean, Portuguese (Brazilian), Russian, and Chinese (Simplified)</li>
             </ul>
             
             <h2>3. AI-Generated Content</h2>
@@ -63,9 +64,11 @@
             <p>If your input is blocked due to content policy violations, you will receive an error message indicating that the content violates our content policy. Please try different words or phrases. We reserve the right to reject any content that we determine violates our content policy or these Terms.</p>
             <p>Additionally, the App enforces input validation measures on our backend including:</p>
             <ul>
-                <li>Maximum input length limits to prevent abuse</li>
-                <li>Input sanitization to remove potentially harmful characters</li>
-                <li>Validation to detect and prevent prompt injection attacks</li>
+                <li>Maximum input length limit of 1,000 characters to prevent abuse</li>
+                <li>Input sanitization to remove null bytes, control characters (except newlines, tabs, and carriage returns), and normalize excessive whitespace</li>
+                <li>Validation to detect and prevent prompt injection attacks using pattern matching and escape mechanisms</li>
+                <li>UTF-8 character set validation to ensure valid encoding</li>
+                <li>Response size limits: maximum 10 KB for JSON strings, 100 characters per emoji string, and 5 KB total response payload</li>
             </ul>
             
             <h2>4. User Responsibilities</h2>
@@ -161,7 +164,15 @@
             <ul>
                 <li>Makes network calls to Firebase Cloud Functions</li>
                 <li>Transmits your text input to Google Gemini AI for processing</li>
+                <li>Uses Firebase App Check to verify app authenticity and prevent unauthorized access</li>
                 <li>Does not function in offline mode</li>
+            </ul>
+            
+            <p><strong>Input Requirements:</strong></p>
+            <ul>
+                <li>Text input must be between 1 and 1,000 characters (after trimming whitespace)</li>
+                <li>Input must contain valid UTF-8 characters</li>
+                <li>Empty or whitespace-only inputs will be rejected</li>
             </ul>
             
             <h2>10. Age Restrictions</h2>
@@ -170,7 +181,14 @@
             
             <h2>11. Rate Limiting</h2>
             
-            <p>To ensure fair use and prevent abuse, the App implements rate limiting. You may be restricted from making requests if you exceed the rate limit. We reserve the right to modify rate limits at any time.</p>
+            <p>To ensure fair use and prevent abuse, the App implements rate limiting:</p>
+            <ul>
+                <li><strong>Rate Limit:</strong> 10 requests per minute per user</li>
+                <li><strong>Time Window:</strong> Requests are counted within a rolling 60-second window</li>
+                <li><strong>Enforcement:</strong> If you exceed the rate limit, your requests will be temporarily blocked with a "Rate limit exceeded" error message</li>
+                <li><strong>Rate Limit Data:</strong> Request counts and timestamps are stored in Firebase Firestore for the purpose of enforcing these limits</li>
+                <li><strong>Modification:</strong> We reserve the right to modify rate limits at any time without prior notice</li>
+            </ul>
             
             <h2>12. Data and Privacy</h2>
             
