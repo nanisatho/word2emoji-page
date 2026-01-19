@@ -1,0 +1,232 @@
+{
+  "common": {
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "finish": "Finish",
+    "done": "Done",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "clear": "Clear",
+    "save": "Save",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "tab": {
+    "generate": "Generate",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "generate": {
+    "navigation": {
+      "title": "Generate"
+    },
+    "input": {
+      "label": "Enter your text",
+      "placeholder": "Type something like 'birthday party' or 'coffee with friends'..."
+    },
+    "advanced": {
+      "title": "Advanced Options",
+      "colorPalette": {
+        "label": "Color Palette",
+        "description": "Choose a color theme for your emojis"
+      },
+      "emojiCount": {
+        "label": "Emoji Count",
+        "description": "Select how many emojis to generate (1-5)"
+      },
+      "clear": "Clear"
+    },
+    "toggle": {
+      "emojiPersonality": {
+        "label": "Use Emoji Personality",
+        "description": "Personalize emojis based on your vibe preferences",
+        "notSet": "Set your personality in Settings first"
+      }
+    },
+    "results": {
+      "title": "Results",
+      "usingPersonality": "Using Personality",
+      "aiInfo": "Results are AI-generated and may vary. Tap to copy emojis."
+    },
+    "error": {
+      "inputTooLong": "Input text is too long (max {max} characters)",
+      "rateLimit": "Please wait a moment before generating again",
+      "contentPolicy": "Content violates our content policy",
+      "internal": "Internal server error. Please try again.",
+      "invalidArgument": "Invalid input. Please check your text.",
+      "permissionDenied": "Permission denied. Please check your connection.",
+      "unauthenticated": "Authentication required. Please refresh.",
+      "serviceUnavailable": "Service temporarily unavailable. Please try again later."
+    },
+    "empty": {
+      "message": "Enter text above to generate emojis"
+    },
+    "emojiCount": {
+      "singular": "emoji",
+      "plural": "emojis"
+    }
+  },
+  "history": {
+    "navigation": {
+      "title": "History"
+    },
+    "empty": {
+      "title": "No History Yet",
+      "message": "Your generated emojis will appear here"
+    },
+    "detail": {
+      "navigation": {
+        "title": "History Detail"
+      },
+      "input": {
+        "label": "Input"
+      },
+      "emojiOptions": {
+        "label": "Emoji Options"
+      },
+      "noSelection": "Select an item from history",
+      "done": "Done"
+    },
+    "delete": "Delete",
+    "time": {
+      "justNow": "just now"
+    }
+  },
+  "settings": {
+    "navigation": {
+      "title": "Settings"
+    },
+    "clearHistory": {
+      "title": "History",
+      "button": "Clear History",
+      "confirm": {
+        "title": "Clear History?",
+        "message": "This will permanently delete all your emoji history. This action cannot be undone.",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "success": {
+        "title": "History Cleared",
+        "message": "All history has been cleared successfully.",
+        "ok": "OK"
+      }
+    },
+    "clearPersonality": {
+      "title": "Personality",
+      "button": "Clear Personality",
+      "confirm": {
+        "title": "Clear Personality?",
+        "message": "This will reset all your personality preferences. You can set a new personality anytime.",
+        "cancel": "Cancel",
+        "delete": "Clear"
+      },
+      "success": {
+        "title": "Personality Cleared",
+        "message": "Your personality preferences have been cleared.",
+        "ok": "OK"
+      }
+    },
+    "setNewPersonality": {
+      "button": "Set New Personality",
+      "warning": {
+        "title": "Reset Personality?",
+        "message": "Setting a new personality will clear your current preferences. Continue?",
+        "cancel": "Cancel",
+        "continue": "Continue"
+      }
+    },
+    "about": {
+      "title": "About",
+      "appInfo": "Word2Emoji - Convert text to emojis using AI",
+      "link": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "support": "Support & Contact"
+      }
+    },
+    "legal": {
+      "copyright": "Copyright © 2025 Nathalia Thomas @ Fiorella Mille. All rights reserved.",
+      "privacy": "Your privacy is important to us.",
+      "terms": "By using this app, you agree to our Terms of Service.",
+      "version": "Version {version} (Build {build})"
+    }
+  },
+  "startup": {
+    "title": "Select 5 personalities that describe you",
+    "results": {
+      "title": "Your Selected Personalities"
+    },
+    "continue": "Continue",
+    "startAgain": "Start Again"
+  },
+  "welcome": {
+    "title": "Welcome to Word2Emoji!",
+    "howToUse": "How to Use",
+    "instruction": {
+      "enter": "Enter text describing what you want emojis for",
+      "generate": "Tap Generate to create emoji options",
+      "copy": "Copy your favorite emoji combination"
+    },
+    "advanced": {
+      "title": "Advanced Features",
+      "subtitle": "Customize your experience",
+      "options": "Color palettes and emoji counts",
+      "languages": "Multi-language support"
+    },
+    "examples": {
+      "title": "Examples",
+      "subtitle": "Try these ideas",
+      "birthdayParty": "birthday party with friends",
+      "pizzaWithFriends": "pizza night with friends",
+      "beachVacation": "relaxing beach vacation"
+    },
+    "getStarted": "Get Started"
+  },
+  "contextMenu": {
+    "loveIt": "Love It",
+    "dontLikeIt": "Don't Like It"
+  },
+  "touch": {
+    "to": {
+      "reveal": "Tap to reveal"
+    }
+  },
+  "tutorial": {
+    "generate": {
+      "input": {
+        "title": "Enter Your Text",
+        "message": "Type or paste text describing what you want emojis for"
+      },
+      "advanced": {
+        "title": "Advanced Options",
+        "message": "Tap here to customize color palette and emoji count",
+        "primary": "Open Advanced Options"
+      },
+      "personality": {
+        "title": "Emoji Personality",
+        "message": "Enable this to personalize emojis based on your vibe preferences"
+      },
+      "color": {
+        "title": "Color Palette",
+        "message": "Choose a color theme for your emojis"
+      },
+      "count": {
+        "title": "Emoji Count",
+        "message": "Select how many emojis to generate",
+        "primary": "Close"
+      },
+      "generate": {
+        "title": "Generate Emojis",
+        "message": "Tap the button to generate your emojis!"
+      }
+    },
+    "common": {
+      "next": "Next",
+      "finish": "Finish"
+    }
+  }
+}

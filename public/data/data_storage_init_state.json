@@ -1,0 +1,28 @@
+{
+  "user": {
+    "user_vibes": [
+      { "name": "vibe.creative", "weight": 0.0, "emoji": "🎨" },
+      { "name": "vibe.funny", "weight": 0.0, "emoji": "😂" },
+      { "name": "vibe.clever", "weight": 0.0, "emoji": "🧠" },
+      { "name": "vibe.dreamer", "weight": 0.0, "emoji": "💭" },
+      { "name": "vibe.chill", "weight": 0.0, "emoji": "🌊" },
+      { "name": "vibe.mysterious", "weight": 0.0, "emoji": "🕵️" },
+      { "name": "vibe.loyal", "weight": 0.0, "emoji": "🐕" },
+      { "name": "vibe.bold", "weight": 0.0, "emoji": "🦁" },
+      { "name": "vibe.whimsical", "weight": 0.0, "emoji": "🦄" },
+      { "name": "vibe.energetic", "weight": 0.0, "emoji": "⚡" },
+      { "name": "vibe.romantic", "weight": 0.0, "emoji": "💖" },
+      { "name": "vibe.rebellious", "weight": 0.0, "emoji": "🎸" },
+      { "name": "vibe.sincere", "weight": 0.0, "emoji": "✨" },
+      { "name": "vibe.iconic", "weight": 0.0, "emoji": "💎" },
+      { "name": "vibe.spicy", "weight": 0.0, "emoji": "🌶️" },
+      { "name": "vibe.gentle", "weight": 0.0, "emoji": "☁️" },
+      { "name": "vibe.optimistic", "weight": 0.0, "emoji": "☀️" }
+    ],
+    "favorite_emojis": []
+  },
+  "forbidden_emojis": [],
+  "emoji_history": [],
+  "last_open_date": "2025-12-20T10:30:00Z",
+  "settings": {}
+}
