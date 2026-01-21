@@ -2,143 +2,253 @@
 
 This repository contains the public-facing legal and support pages for the Emojify Text iOS app. These pages are required for Apple App Store review compliance.
 
+Built with **Next.js 14**, **TypeScript**, and **React**, featuring full internationalization support for 10 languages.
+
 ## Pages
 
-- **Privacy Policy** (`privacy-policy.html`) - Comprehensive privacy policy covering data collection, storage, third-party services, and user rights
-- **Terms of Service** (`terms-of-service.html`) - Terms and conditions for using the Emojify Text app
-- **Support & Contact** (`support.html`) - Support information, FAQs, and contact details
+- **Privacy Policy** - Comprehensive privacy policy covering data collection, storage, third-party services, and user rights
+- **Terms of Service** - Terms and conditions for using the Emojify Text app
+- **Support & Contact** - Support information, FAQs, and contact details
+
+All pages are available in multiple languages:
+- English (en) - Default
+- Spanish (es)
+- German (de)
+- French (fr)
+- Italian (it)
+- Japanese (ja)
+- Korean (ko)
+- Portuguese (pt-BR)
+- Russian (ru)
+- Chinese Simplified (zh-Hans)
+
+## Project Structure
+
+```
+word2emoji-page/
+├── app/                          # Next.js App Router pages
+│   ├── layout.tsx               # Root layout with Footer
+│   ├── page.tsx                 # Root redirect to /en/
+│   ├── globals.css              # Global styles
+│   └── [locale]/                # Internationalized routes
+│       ├── page.tsx             # Home page
+│       ├── privacy-policy/      # Privacy Policy page
+│       ├── terms-of-service/    # Terms of Service page
+│       └── support/            # Support page
+├── components/                   # Reusable React components
+│   ├── Header.tsx              # Header component
+│   ├── Footer.tsx              # Footer component
+│   ├── BackLink.tsx            # Back to home link
+│   └── MarkdownContent.tsx     # Markdown renderer
+├── content/                      # Markdown content files
+│   ├── en/                     # English content
+│   ├── es/                     # Spanish content
+│   ├── de/                     # German content
+│   ├── fr/                     # French content
+│   ├── it/                     # Italian content
+│   ├── ja/                     # Japanese content
+│   ├── ko/                     # Korean content
+│   ├── pt-BR/                  # Portuguese (Brazil) content
+│   ├── ru/                     # Russian content
+│   └── zh-Hans/                # Chinese Simplified content
+├── lib/                         # Utility functions
+│   ├── markdown.ts             # Markdown parsing utilities
+│   └── translations.ts         # Translation strings
+├── public/                      # Static assets
+│   └── images/                 # Image files
+├── package.json                 # Dependencies
+├── next.config.js              # Next.js configuration
+├── tsconfig.json               # TypeScript configuration
+└── vercel.json                 # Vercel deployment configuration
+```
 
 ## Setup
 
+### Prerequisites
+
+- Node.js 18+ and npm (or yarn/pnpm)
+- Git
+
 ### Local Development
 
-1. Clone this repository:
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/nanisatho/word2emoji-page.git
    cd word2emoji-page
    ```
 
-2. Open `index.html` in a web browser to view the site locally
-
-3. For local testing with a simple HTTP server:
+2. **Install dependencies:**
    ```bash
-   # Using Python 3
-   python3 -m http.server 8000
-   
-   # Using Node.js (if you have http-server installed)
-   npx http-server
-   ```
-   
-   Then visit `http://localhost:8000` in your browser
-
-## Deployment to GitHub Pages
-
-### Automatic Deployment
-
-1. Push your changes to the `main` branch:
-   ```bash
-   git add .
-   git commit -m "Update public pages"
-   git push origin main
+   npm install
    ```
 
-2. Enable GitHub Pages in your repository settings:
-   - Go to Settings → Pages
-   - Under "Source", select "Deploy from a branch"
-   - Choose the `main` branch and `/ (root)` folder
-   - Click Save
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-3. Your site will be available at:
-   `https://nanisatho.github.io/word2emoji-page/`
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+   
+   The root URL will automatically redirect to `/en/` (English).
 
-### Manual Deployment
+5. **View pages in different languages:**
+   - English: `http://localhost:3000/en/`
+   - Spanish: `http://localhost:3000/es/`
+   - German: `http://localhost:3000/de/`
+   - And so on for other supported locales
 
-If you prefer manual deployment or need to use a different branch:
+### Build for Production
 
-1. Ensure all files are committed and pushed
-2. Go to repository Settings → Pages
-3. Configure the source branch and folder
-4. GitHub will automatically build and deploy your site
+Build the static site:
 
-### Custom Domain Configuration
+```bash
+npm run build
+```
 
-The site is configured with a custom domain:
+This generates static files in the `out/` directory, ready for deployment.
 
-- **Custom Domain**: `emojify-text.inventa-labs.com`
-- **Live URL**: `http://emojify-text.inventa-labs.com/`
-- **Source Branch**: `main` branch
-- **Last Deployed**: Automatically deployed by GitHub Pages build and deployment workflow
+### Run Production Build Locally
 
-#### Current Status
+After building, you can preview the production build:
 
-⚠️ **DNS Configuration Issue**: The custom domain is currently improperly configured.
+```bash
+npm run start
+```
 
-- DNS check is unsuccessful - domain's DNS record could not be retrieved (InvalidDNSError)
-- HTTPS enforcement is unavailable until DNS is properly configured
-- The site is accessible via HTTP, but HTTPS cannot be enforced until DNS records are correctly set up
+## Deployment
 
-#### DNS Configuration Requirements
+### Vercel (Recommended)
 
-To properly configure the custom domain and enable HTTPS:
+This project is configured for deployment on Vercel with automatic static site generation.
 
-1. Add DNS records for `emojify-text.inventa-labs.com` pointing to GitHub Pages
-2. Wait for DNS propagation
-3. Once DNS check passes, HTTPS will become available
-4. Enable "Enforce HTTPS" in GitHub Pages settings for secure connections
+#### Option A: Connect via Vercel Dashboard
 
-For more information, see GitHub's [documentation on configuring custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+1. Go to [vercel.com](https://vercel.com)
+2. Click "Add New Project"
+3. Import your GitHub repository: `nanisatho/word2emoji-page`
+4. Vercel will auto-detect Next.js and configure everything
+5. Click "Deploy"
+
+#### Option B: Deploy via CLI
+
+```bash
+npm i -g vercel
+vercel
+```
+
+#### Custom Domain Setup
+
+1. In Vercel dashboard, go to your project → Settings → Domains
+2. Add your custom domain: `emojify-text.inventa-labs.com`
+3. Follow DNS configuration instructions provided by Vercel
+4. Vercel will automatically provision SSL certificates
+
+### Other Static Hosting Providers
+
+Since this project uses `output: 'export'` in `next.config.js`, you can deploy the `out/` directory to any static hosting provider:
+
+- **GitHub Pages**: Upload the `out/` directory contents
+- **Netlify**: Connect repository or drag-and-drop the `out/` folder
+- **AWS S3 + CloudFront**: Upload `out/` to S3 bucket
+- **Any static file server**: Serve the `out/` directory
 
 ## URLs
 
-Once deployed, your pages will be available at:
+### Production URLs
 
-**Custom Domain (HTTP - DNS needs configuration)**:
-- Home: `http://emojify-text.inventa-labs.com/`
-- Privacy Policy: `http://emojify-text.inventa-labs.com/privacy-policy.html`
-- Terms of Service: `http://emojify-text.inventa-labs.com/terms-of-service.html`
-- Support: `http://emojify-text.inventa-labs.com/support.html`
+**Custom Domain** (Primary):
+- Home: `https://emojify-text.inventa-labs.com/`
+- Privacy Policy: `https://emojify-text.inventa-labs.com/en/privacy-policy/`
+- Terms of Service: `https://emojify-text.inventa-labs.com/en/terms-of-service/`
+- Support: `https://emojify-text.inventa-labs.com/en/support/`
 
-**GitHub Pages Default Domain**:
-- Home: `https://nanisatho.github.io/word2emoji-page/`
-- Privacy Policy: `https://nanisatho.github.io/word2emoji-page/privacy-policy.html`
-- Terms of Service: `https://nanisatho.github.io/word2emoji-page/terms-of-service.html`
-- Support: `https://nanisatho.github.io/word2emoji-page/support.html`
+**Language-specific URLs** (replace `en` with locale code):
+- English: `/en/privacy-policy/`
+- Spanish: `/es/privacy-policy/`
+- German: `/de/privacy-policy/`
+- French: `/fr/privacy-policy/`
+- Italian: `/it/privacy-policy/`
+- Japanese: `/ja/privacy-policy/`
+- Korean: `/ko/privacy-policy/`
+- Portuguese (BR): `/pt-BR/privacy-policy/`
+- Russian: `/ru/privacy-policy/`
+- Chinese Simplified: `/zh-Hans/privacy-policy/`
+
+## Internationalization (i18n)
+
+### Supported Languages
+
+The site supports 10 languages with URL-based routing:
+
+- `en` - English (default)
+- `es` - Spanish (Español)
+- `de` - German (Deutsch)
+- `fr` - French (Français)
+- `it` - Italian (Italiano)
+- `ja` - Japanese (日本語)
+- `ko` - Korean (한국어)
+- `pt-BR` - Portuguese (Brazil) (Português)
+- `ru` - Russian (Русский)
+- `zh-Hans` - Chinese Simplified (简体中文)
+
+### Adding Content for a New Language
+
+1. **Create language directory:**
+   ```bash
+   mkdir -p content/[locale]
+   ```
+
+2. **Create markdown files:**
+   Copy and translate the English markdown files:
+   ```bash
+   cp content/en/*.md content/[locale]/
+   # Then translate content/[locale]/*.md files
+   ```
+
+3. **Add translations:**
+   Update `lib/translations.ts` to add translation strings for the new locale.
+
+4. **Update locale list:**
+   Add the locale to the `locales` array in `app/[locale]/page.tsx`.
+
+### Content Format
+
+Content files are stored as Markdown in the `content/` directory. Each file can include frontmatter:
+
+```markdown
+---
+title: Privacy Policy
+lastUpdated: December 20, 2025
+---
+
+# Privacy Policy
+
+Your content here...
+```
 
 ## Customization
 
-### Update Placeholders
+### Update Contact Information
 
-Before deploying, update the following placeholders in the HTML files:
+Update the following in the markdown files:
 
-1. **Company/Developer Name**: `Nathalia Thomas @ Inventa Labs 💡` (already updated)
-   - Files: `index.html`, `privacy-policy.html`, `terms-of-service.html`, `support.html`
+1. **Support Email**: `info@inventa-labs.com`
+   - Files: `content/*/support.md`, `content/*/privacy-policy.md`, `content/*/terms-of-service.md`
 
-2. **Support Email**: `info@inventa-labs.com` (already updated)
-   - Files: `privacy-policy.html`, `terms-of-service.html`, `support.html`
+2. **Company/Developer Name**: `Nathalia Thomas @ Inventa Labs 💡`
+   - Files: All markdown files in `content/`
 
-3. **Jurisdiction** (in Terms of Service): Replace `[Jurisdiction]` with your legal jurisdiction
-   - File: `terms-of-service.html`
+3. **Jurisdiction** (in Terms of Service): Update with your legal jurisdiction
+   - Files: `content/*/terms-of-service.md`
 
 ### Styling
 
-The site uses a shared `styles.css` file. You can customize:
+The site uses a shared `app/globals.css` file. You can customize:
 - Colors (currently using Apple-inspired design)
 - Fonts
 - Spacing and layout
 - Responsive breakpoints
-
-## File Structure
-
-```
-word2emoji-page/
-├── index.html              # Landing page with navigation
-├── privacy-policy.html     # Privacy policy
-├── terms-of-service.html   # Terms of service
-├── support.html           # Support and contact page
-├── styles.css             # Shared stylesheet
-├── .nojekyll              # Prevents Jekyll processing
-└── README.md              # This file
-```
 
 ## Requirements Met
 
@@ -163,16 +273,23 @@ These pages address the following Apple App Review requirements:
 - FAQ section
 - Issue reporting guidance
 
-## Next Steps
+## Technology Stack
 
-1. Update all placeholder values (company name, email, jurisdiction)
-2. Review legal content for accuracy
-3. Deploy to GitHub Pages
-4. Update iOS app to link to these pages
-5. Add URLs to App Store Connect metadata:
-   - Privacy Policy URL
-   - Terms of Service URL
-   - Support URL
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **UI Library**: React 18
+- **Styling**: CSS (global styles)
+- **Content**: Markdown files
+- **Markdown Rendering**: react-markdown
+- **Deployment**: Vercel (static export)
+- **Internationalization**: URL-based routing with locale detection
+
+## Development Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build static site for production
+- `npm run start` - Start production server (after build)
+- `npm run lint` - Run ESLint
 
 ## License
 
