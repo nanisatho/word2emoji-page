@@ -64,8 +64,8 @@ If you prefer manual deployment or need to use a different branch:
 
 The site is configured with a custom domain:
 
-- **Custom Domain**: `word2emoji.fiorellamille.com`
-- **Live URL**: `http://word2emoji.fiorellamille.com/`
+- **Custom Domain**: `emojify-text.inventa-labs.com`
+- **Live URL**: `http://emojify-text.inventa-labs.com/`
 - **Source Branch**: `main` branch
 - **Last Deployed**: Automatically deployed by GitHub Pages build and deployment workflow
 
@@ -81,7 +81,7 @@ The site is configured with a custom domain:
 
 To properly configure the custom domain and enable HTTPS:
 
-1. Add DNS records for `word2emoji.fiorellamille.com` pointing to GitHub Pages
+1. Add DNS records for `emojify-text.inventa-labs.com` pointing to GitHub Pages
 2. Wait for DNS propagation
 3. Once DNS check passes, HTTPS will become available
 4. Enable "Enforce HTTPS" in GitHub Pages settings for secure connections
@@ -93,10 +93,10 @@ For more information, see GitHub's [documentation on configuring custom domains]
 Once deployed, your pages will be available at:
 
 **Custom Domain (HTTP - DNS needs configuration)**:
-- Home: `http://word2emoji.fiorellamille.com/`
-- Privacy Policy: `http://word2emoji.fiorellamille.com/privacy-policy.html`
-- Terms of Service: `http://word2emoji.fiorellamille.com/terms-of-service.html`
-- Support: `http://word2emoji.fiorellamille.com/support.html`
+- Home: `http://emojify-text.inventa-labs.com/`
+- Privacy Policy: `http://emojify-text.inventa-labs.com/privacy-policy.html`
+- Terms of Service: `http://emojify-text.inventa-labs.com/terms-of-service.html`
+- Support: `http://emojify-text.inventa-labs.com/support.html`
 
 **GitHub Pages Default Domain**:
 - Home: `https://nanisatho.github.io/word2emoji-page/`
@@ -113,7 +113,7 @@ Before deploying, update the following placeholders in the HTML files:
 1. **Company/Developer Name**: `Nathalia Thomas @ Fiorella Mille` (already updated)
    - Files: `index.html`, `privacy-policy.html`, `terms-of-service.html`, `support.html`
 
-2. **Support Email**: `support@fiorellamille.com` (already updated)
+2. **Support Email**: `info@inventa-labs.com` (already updated)
    - Files: `privacy-policy.html`, `terms-of-service.html`, `support.html`
 
 3. **Jurisdiction** (in Terms of Service): Replace `[Jurisdiction]` with your legal jurisdiction
