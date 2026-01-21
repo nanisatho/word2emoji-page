@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header({ showSubtitle = true }: { showSubtitle?: boolean }) {
+export default function Header({ 
+  showSubtitle = true,
+  subtitle = 'Legal & Support Information'
+}: { 
+  showSubtitle?: boolean
+  subtitle?: string 
+}) {
   return (
     <header>
       <div className="app-icon-container">
@@ -17,7 +23,7 @@ export default function Header({ showSubtitle = true }: { showSubtitle?: boolean
         </div>
       </div>
       <h1>Emojify Text</h1>
-      {showSubtitle && <p className="subtitle">Legal & Support Information</p>}
+      {showSubtitle && <p className="subtitle">{subtitle}</p>}
     </header>
   )
 }
