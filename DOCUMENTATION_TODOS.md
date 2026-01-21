@@ -27,7 +27,7 @@ Choose which items to implement by checking them off. Each item is independent a
 - [ ] **FAQ: Input Limits** - Add FAQ "What are the input length limits?" with answer about 500/1000 char limits
 - [ ] **FAQ: Emoji Count** - Add FAQ "How many emoji options do I get per request?" with answer about exactly 5 options
 - [x] **FAQ: Timeout** - Add FAQ "What happens if my request times out?" with answer about 30s/60s timeouts
-- [ ] **FAQ: AI Model** - Add FAQ "What AI model does Word2Emoji use?" with answer about Gemini Flash
+- [ ] **FAQ: AI Model** - Add FAQ "What AI model does Emojify Text use?" with answer about Gemini Flash
 - [ ] **Update: Internet Connection FAQ** - Update existing "Why do I need an internet connection?" FAQ with technical details about Firebase and server-side processing
 - [x] **Update: Content Blocked FAQ** - Update existing "Why was my content blocked?" FAQ to add timeout information
 - [ ] **FAQ: History Limit** - Add FAQ "What is the history storage limit?" with answer about 100 items max

@@ -1,11 +1,11 @@
-# Word2Emoji - Public Pages
+# Emojify Text - Public Pages
 
-This repository contains the public-facing legal and support pages for the Word2Emoji iOS app. These pages are required for Apple App Store review compliance.
+This repository contains the public-facing legal and support pages for the Emojify Text iOS app. These pages are required for Apple App Store review compliance.
 
 ## Pages
 
 - **Privacy Policy** (`privacy-policy.html`) - Comprehensive privacy policy covering data collection, storage, third-party services, and user rights
-- **Terms of Service** (`terms-of-service.html`) - Terms and conditions for using the Word2Emoji app
+- **Terms of Service** (`terms-of-service.html`) - Terms and conditions for using the Emojify Text app
 - **Support & Contact** (`support.html`) - Support information, FAQs, and contact details
 
 ## Setup
@@ -110,7 +110,7 @@ Once deployed, your pages will be available at:
 
 Before deploying, update the following placeholders in the HTML files:
 
-1. **Company/Developer Name**: `Nathalia Thomas @ Fiorella Mille` (already updated)
+1. **Company/Developer Name**: `Nathalia Thomas @ Inventa Labs 💡` (already updated)
    - Files: `index.html`, `privacy-policy.html`, `terms-of-service.html`, `support.html`
 
 2. **Support Email**: `info@inventa-labs.com` (already updated)
@@ -176,4 +176,4 @@ These pages address the following Apple App Review requirements:
 
 ## License
 
-Copyright © 2025 Nathalia Thomas @ Fiorella Mille. All rights reserved.
+Copyright © 2025 Nathalia Thomas @ Inventa Labs 💡. All rights reserved.
